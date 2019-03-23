@@ -9,10 +9,14 @@
 import Foundation
 //MARK:typealias
 typealias errorCompletion = ((_ error:Error?)->Void)
+typealias successCompletion = ((_ success:Bool)->Void)
 //MARK:- NOTIFICATION Name
-
+//MARK:- CELL IDENTIFIRE
+let SETTINGS_CELL = "settingsCell"
 //MARK:- ViewController ID
 let MAIN_CHAT_VC_TAB = "mainChatVC"
+let REGISTER_VC = "registerVC"
+let CHAT_VC = "chatVC"
 //MARK: - segue identifer
 let TO_COMPLETE_REGISTER = "toCompleteRegister"
 //MARK:UserServices  K >> shortcut for key

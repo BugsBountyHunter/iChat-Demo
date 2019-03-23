@@ -41,6 +41,20 @@ class UserServices{
             }
         }
     }
+    //MARK: logout
+    class func logoutCurrentUser(completion:@escaping successCompletion){
+       // UserDefaults.removeObject()
+        //removeOneSingnalId()
+        UserDefaults.standard.removeObject(forKey: KCURRENTUSER)
+        UserDefaults.standard.synchronize()
+        do{
+            try Auth.auth().signOut()
+            completion(true)
+        }catch let error as NSError{
+            print(String(describing: error.localizedDescription))
+            completion(false)
+        }
+    }
 }//end class
 //MARK:- save data locally
 func saveUserLocally(withUser user:User){
@@ -71,6 +85,7 @@ func fetchCurrentUserFromFirestore(WithUserId id:String){
         if snapshot.exists{
 //            saveUserLocally(withUser: (snapshot.data()! as? User)!)
          print(snapshot.data()  as Any)
+            //save data in local
             UserDefaults.standard.setValue(snapshot.data()! as NSDictionary, forKey: KCURRENTUSER)
             UserDefaults.standard.synchronize()
         }
