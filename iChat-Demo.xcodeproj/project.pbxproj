@@ -18,6 +18,8 @@
 		D26A4F69224652FC0061F159 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A4F68224652FC0061F159 /* RegisterVC.swift */; };
 		D26A4F6B2246535A0061F159 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A4F6A2246535A0061F159 /* LoginVC.swift */; };
 		D26A4F6D224653970061F159 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A4F6C224653970061F159 /* SettingsVC.swift */; };
+		D26A4F6F224666F10061F159 /* StoreReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A4F6E224666F10061F159 /* StoreReference.swift */; };
+		D26A4F71224670CA0061F159 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A4F70224670C90061F159 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		D26A4F68224652FC0061F159 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		D26A4F6A2246535A0061F159 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D26A4F6C224653970061F159 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		D26A4F6E224666F10061F159 /* StoreReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreReference.swift; sourceTree = "<group>"; };
+		D26A4F70224670C90061F159 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 		D2545B402243D207002E91FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D26A4F70224670C90061F159 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				D2545B4922456B8B002E91FA /* UserServices.swift */,
+				D26A4F6E224666F10061F159 /* StoreReference.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -298,7 +304,9 @@
 				D2545B2F2243D069002E91FA /* AppDelegate.swift in Sources */,
 				D2545B4C22457143002E91FA /* Constants.swift in Sources */,
 				D26A4F69224652FC0061F159 /* RegisterVC.swift in Sources */,
+				D26A4F71224670CA0061F159 /* User.swift in Sources */,
 				D26A4F6B2246535A0061F159 /* LoginVC.swift in Sources */,
+				D26A4F6F224666F10061F159 /* StoreReference.swift in Sources */,
 				D26A4F6D224653970061F159 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
