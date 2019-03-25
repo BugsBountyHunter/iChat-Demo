@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 //MARK:typealias
-typealias errorCompletion = ((_ error:Error?)->Void)
-typealias successCompletion = ((_ success:Bool)->Void)
+typealias errorCompletion = (_ error:Error?)->Void
+typealias successCompletion = (_ success:Bool)->Void
+typealias imageCallback = (_ image:UIImage)->Void
 //MARK:- NOTIFICATION Name
 //MARK:- CELL IDENTIFIRE
 let SETTINGS_CELL = "settingsCell"

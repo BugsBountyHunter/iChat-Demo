@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 
 class UserServices{
     //MARK:- User login and register function
@@ -31,13 +32,14 @@ class UserServices{
     //MARK: login
     class func loginUserWith(_ email:String ,_ password:String ,completion:@escaping errorCompletion){
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            guard let user = user?.user  else {return}
             if error != nil {
                 completion(error)
                 return
             }else{
                 //get user from firebase and save locally
+                guard let user = user?.user  else {return}
                 fetchCurrentUserFromFirestore(WithUserId: user.uid)
+                completion(error)
             }
         }
     }
@@ -55,6 +57,10 @@ class UserServices{
             completion(false)
         }
     }
+    //MARK:- getCurrentId
+   class func currentUserID()->String{
+        return (Auth.auth().currentUser?.uid)!
+    }
 }//end class
 //MARK:- save data locally
 func saveUserLocally(withUser user:User){
@@ -62,19 +68,41 @@ func saveUserLocally(withUser user:User){
     UserDefaults.standard.synchronize()
 }
 func convertUserToDictinary(fromUser user:User)->NSDictionary {
-    let dateFormatter = DateFormatter()
     //convert from date to string
-    let createAtString = dateFormatter.string(from: user.createAt)
-    let updateAtString = dateFormatter.string(from: user.updateAt)
+    let createAtString = dateFormatter().string(from: user.createAt)
+    let updateAtString = dateFormatter().string(from: user.updateAt)
     
     let userDict = NSDictionary(objects: [user.objectID,createAtString,updateAtString,user.email,user.loginMethod,user.pushID!,user.firstName,user.lastName,user.fullName,user.avatar,user.contacts,user.blockUsers,user.isOnline,user.phoneNumber,user.countryCode,user.city,user.country], forKeys: [KOBJECTID as NSCopying , KCREATEAT as NSCopying , KUPDATEAT as NSCopying , KEMAIL as NSCopying , KLOGINMETHOD as NSCopying , KPUSHID as NSCopying , KFIRSTNAME as NSCopying , KLASTNAME as NSCopying , KFULLNAME  as NSCopying , KAVATAR as NSCopying , KCONTACT as NSCopying , KBLOCKEDUSERID as NSCopying , KISONLINE as NSCopying , KPHONE as NSCopying , KCOUNTRYCODE as NSCopying , KCITY as NSCopying , KCOUNTRY as NSCopying])
     return userDict
 }
 
-//MARK:Save data to fireStorage
+//MARK:Save user to fireStorage
 func saveUserToFirestore(withUser user:User){
     reference(.User).document(user.objectID).setData(convertUserToDictinary(fromUser: user) as! [String:Any]) { (error) in
         print(String(describing: error?.localizedDescription))
+    }
+}
+//MARK: update Current user in firestore
+func updateCurrentUserInFirestore(withValue value:[String:Any] , completion:@escaping errorCompletion){
+    if let dict = UserDefaults.standard.object(forKey: KCURRENTUSER){
+        var tempDictValue = value
+        let currentId = UserServices.currentUserID()
+        let updateAt = dateFormatter().string(from: Date())
+        
+        tempDictValue[KUPDATEAT] = updateAt
+        let userObject = (dict as! NSDictionary).mutableCopy() as! NSMutableDictionary
+        userObject.setValuesForKeys(tempDictValue)
+        
+        reference(.User).document(currentId).updateData(tempDictValue) { (error) in
+            if error != nil {
+                completion(error)
+                return
+            }
+            UserDefaults.standard.setValue(userObject, forKey: KCURRENTUSER)
+            UserDefaults.standard.synchronize()
+            completion(error)
+        }
+        
     }
 }
 
@@ -91,4 +119,5 @@ func fetchCurrentUserFromFirestore(WithUserId id:String){
         }
         
     }
+    //MARK:- 
 }
