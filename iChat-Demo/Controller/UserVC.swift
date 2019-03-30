@@ -160,7 +160,7 @@ class UserVC: UITableViewController {
             user = users![indexPath.row]
         }
         cell.setupCell(withUser: user, andIndexPath: indexPath)
-        //cell.delegate = self
+        cell.delegate = self
         return cell
     }
     // delegate
@@ -198,4 +198,25 @@ extension UserVC:UISearchResultsUpdating{
         })
         tableView.reloadData()
     }
+}
+//chatCell delegate extension
+extension UserVC:ChatCellDelagate{
+    func didTapAvatarImage(indexPath: IndexPath) {
+        print("u clicked on \(indexPath)")
+        //go to Profile
+        
+        let sb = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let profileVC = sb.instantiateViewController(withIdentifier: PROFILE_VC) as! ProfileVC
+        
+        if searchController.isActive && searchController.searchBar.text != "" {
+            profileVC.initData(filterUsers[indexPath.row])
+        }else{
+            let sectionTitle = self.sectionTitleList[indexPath.section]
+            let users = self.allUserGropped[sectionTitle]
+            profileVC.initData(users![indexPath.row])
+        }
+        navigationController?.pushViewController(profileVC, animated: true)
+    }
+    
+    
 }

@@ -26,6 +26,7 @@
 		D26A4F752246C33A0061F159 /* CallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A4F742246C33A0061F159 /* CallVC.swift */; };
 		D26A4F772246C53C0061F159 /* StoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A4F762246C53C0061F159 /* StoryboardExtension.swift */; };
 		D28DC7B7224847C9007AE60B /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DC7B6224847C9007AE60B /* HelperFunctions.swift */; };
+		E2FAC339224FFAEC00BCFEDA /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FAC338224FFAEC00BCFEDA /* ProfileVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		D26A4F742246C33A0061F159 /* CallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallVC.swift; sourceTree = "<group>"; };
 		D26A4F762246C53C0061F159 /* StoryboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardExtension.swift; sourceTree = "<group>"; };
 		D28DC7B6224847C9007AE60B /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		E2FAC338224FFAEC00BCFEDA /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				D26A4F722246BFA60061F159 /* ChatVC.swift */,
 				D26A4F742246C33A0061F159 /* CallVC.swift */,
 				D244F0F7224D076200EC1F4B /* UserVC.swift */,
+				E2FAC338224FFAEC00BCFEDA /* ProfileVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2FAC339224FFAEC00BCFEDA /* ProfileVC.swift in Sources */,
 				D26A4F772246C53C0061F159 /* StoryboardExtension.swift in Sources */,
 				D26A4F732246BFA60061F159 /* ChatVC.swift in Sources */,
 				D2545B4A22456B8B002E91FA /* UserServices.swift in Sources */,

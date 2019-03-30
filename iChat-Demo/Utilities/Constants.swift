@@ -21,6 +21,7 @@ let CHAT_CELL = "chatCell"
 let MAIN_CHAT_VC_TAB = "mainChatVC"
 let REGISTER_VC = "registerVC"
 let CHAT_VC = "chatVC"
+let PROFILE_VC = "profileVC"
 //MARK: - segue identifer
 let TO_COMPLETE_REGISTER = "toCompleteRegister"
 let TO_NEW_CHAT = "toChatVC"

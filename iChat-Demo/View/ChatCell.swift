@@ -7,13 +7,15 @@
 //
 
 import UIKit
-
+protocol ChatCellDelagate{
+    func didTapAvatarImage(indexPath:IndexPath)
+}
 class ChatCell: UITableViewCell {
 
     //MARK:- outlets
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
-    
+    var delegate:ChatCellDelagate?
     //MARK:- properties
     var indexPath:IndexPath!
     let tap = UITapGestureRecognizer()
@@ -26,7 +28,7 @@ class ChatCell: UITableViewCell {
     }
     //MARK:-  function
     @objc func avatarTap(){
-        print("avatar at \(indexPath)")
+        delegate?.didTapAvatarImage(indexPath: indexPath)
     }
     func setupCell(withUser user:User ,andIndexPath indexPath:IndexPath){
         self.indexPath = indexPath
@@ -42,7 +44,6 @@ class ChatCell: UITableViewCell {
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
 
     }
 
