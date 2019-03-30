@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C8993DBFDA2C17D9B4C5DF64 /* Pods_iChat_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FF0F3AFEDFDA2CA9246FA0 /* Pods_iChat_Demo.framework */; };
+		D244F0F6224CF37E00EC1F4B /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D244F0F5224CF37E00EC1F4B /* ChatCell.swift */; };
+		D244F0F8224D076200EC1F4B /* UserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D244F0F7224D076200EC1F4B /* UserVC.swift */; };
 		D2545B2F2243D069002E91FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2545B2E2243D069002E91FA /* AppDelegate.swift */; };
 		D2545B342243D06A002E91FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2545B322243D06A002E91FA /* Main.storyboard */; };
 		D2545B362243D075002E91FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2545B352243D075002E91FA /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		1845543EBD9FFF7110C3F3F2 /* Pods-iChat-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChat-Demo.release.xcconfig"; path = "Target Support Files/Pods-iChat-Demo/Pods-iChat-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		5BCC48E3EEBE456449D473B6 /* Pods-iChat-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iChat-Demo.debug.xcconfig"; path = "Target Support Files/Pods-iChat-Demo/Pods-iChat-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		B2FF0F3AFEDFDA2CA9246FA0 /* Pods_iChat_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iChat_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D244F0F5224CF37E00EC1F4B /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		D244F0F7224D076200EC1F4B /* UserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVC.swift; sourceTree = "<group>"; };
 		D2545B2B2243D069002E91FA /* iChat-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iChat-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2545B2E2243D069002E91FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2545B332243D06A002E91FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				D2545B322243D06A002E91FA /* Main.storyboard */,
+				D244F0F5224CF37E00EC1F4B /* ChatCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 				D26A4F6C224653970061F159 /* SettingsVC.swift */,
 				D26A4F722246BFA60061F159 /* ChatVC.swift */,
 				D26A4F742246C33A0061F159 /* CallVC.swift */,
+				D244F0F7224D076200EC1F4B /* UserVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -339,9 +345,11 @@
 				D2545B2F2243D069002E91FA /* AppDelegate.swift in Sources */,
 				D28DC7B7224847C9007AE60B /* HelperFunctions.swift in Sources */,
 				D2545B4C22457143002E91FA /* Constants.swift in Sources */,
+				D244F0F8224D076200EC1F4B /* UserVC.swift in Sources */,
 				D26A4F69224652FC0061F159 /* RegisterVC.swift in Sources */,
 				D26A4F71224670CA0061F159 /* User.swift in Sources */,
 				D26A4F6B2246535A0061F159 /* LoginVC.swift in Sources */,
+				D244F0F6224CF37E00EC1F4B /* ChatCell.swift in Sources */,
 				D26A4F6F224666F10061F159 /* StoreReference.swift in Sources */,
 				D26A4F6D224653970061F159 /* SettingsVC.swift in Sources */,
 			);

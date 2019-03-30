@@ -12,15 +12,18 @@ import UIKit
 typealias errorCompletion = (_ error:Error?)->Void
 typealias successCompletion = (_ success:Bool)->Void
 typealias imageCallback = (_ image:UIImage)->Void
+typealias imageDataCallback = (_ image:Data?)->Void
 //MARK:- NOTIFICATION Name
 //MARK:- CELL IDENTIFIRE
 let SETTINGS_CELL = "settingsCell"
+let CHAT_CELL = "chatCell"
 //MARK:- ViewController ID
 let MAIN_CHAT_VC_TAB = "mainChatVC"
 let REGISTER_VC = "registerVC"
 let CHAT_VC = "chatVC"
 //MARK: - segue identifer
 let TO_COMPLETE_REGISTER = "toCompleteRegister"
+let TO_NEW_CHAT = "toChatVC"
 //MARK:UserServices  K >> shortcut for key
 public let KEMAIL = "email"
 public let KPHONE = "phone"

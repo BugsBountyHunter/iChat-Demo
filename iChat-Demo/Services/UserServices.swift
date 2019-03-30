@@ -58,8 +58,16 @@ class UserServices{
         }
     }
     //MARK:- getCurrentId
-   class func currentUserID()->String{
-        return (Auth.auth().currentUser?.uid)!
+   class func currentID()->String{
+        return Auth.auth().currentUser!.uid
+    }
+    class func currentUser()->User?{
+        if Auth.auth().currentUser != nil {
+            if let dictionary = UserDefaults.standard.object(forKey: KCURRENTUSER){
+                return User.init(dictionary as! Dictionary)
+            }
+        }
+        return nil
     }
 }//end class
 //MARK:- save data locally
@@ -86,7 +94,7 @@ func saveUserToFirestore(withUser user:User){
 func updateCurrentUserInFirestore(withValue value:[String:Any] , completion:@escaping errorCompletion){
     if let dict = UserDefaults.standard.object(forKey: KCURRENTUSER){
         var tempDictValue = value
-        let currentId = UserServices.currentUserID()
+        let currentId = UserServices.currentID()
         let updateAt = dateFormatter().string(from: Date())
         
         tempDictValue[KUPDATEAT] = updateAt

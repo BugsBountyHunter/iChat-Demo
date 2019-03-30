@@ -20,8 +20,15 @@ func dateFormatter()->DateFormatter{
     return dateFormatter
 }
 
-//create image from firstname and last name
 
+//create avatar Image from imageURL
+func dataImage(fromString imgString:String,withBlock:imageDataCallback){
+    let dataImage = Data(base64Encoded: imgString, options: Data.Base64DecodingOptions(rawValue: 0))
+    withBlock(dataImage as Data?)
+    
+}
+
+//create image from firstname and last name
 func createImageFromInitials(_ firstName:String?,lastName:String?,completion:@escaping imageCallback){
     //New image Properties
     var string:String!
@@ -52,4 +59,35 @@ func createImageFromInitials(_ firstName:String?,lastName:String?,completion:@es
     let img = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     completion(img!)
+}
+//MARK:- Extension
+
+extension UIImage{
+    
+    //Properties
+    var isPortrait:Bool { return size.height > size.width}
+    var isLandscape:Bool {return size.width > size .height}
+    //get mim width or height
+    var breadth:CGFloat {return min(size.width, size.height)}
+    //create a new width and height based on ==== ( min )
+    var breadthSize:CGSize{return CGSize(width: breadth, height: breadth)}
+    var breadthRect:CGRect{return CGRect(origin: .zero, size: breadthSize)}
+    
+    var circleMasked:UIImage?{
+        UIGraphicsBeginImageContextWithOptions(breadthSize, false, scale)
+        // all code in defer do after all function end
+        defer{UIGraphicsEndImageContext()}
+        guard let cgImage = cgImage?.cropping(to: CGRect(origin: CGPoint(x: isLandscape ? floor((size.width - size.height)/2):0, y: isPortrait ? floor((size.height -  size.width)/2): 0), size: breadthSize)) else{return nil}
+        UIBezierPath(ovalIn: breadthRect).addClip()
+        UIImage(cgImage: cgImage).draw(in: breadthRect)
+        return UIGraphicsGetImageFromCurrentImageContext()
+        //origin: isLandscape ? floor((size.width - size.height)/2):0 ,y: isPortrait ? floor((size.height -  size.width)/2): 0, size: breadthSize)
+    }
+    
+    
+    
+    
+    
+    
+    
 }

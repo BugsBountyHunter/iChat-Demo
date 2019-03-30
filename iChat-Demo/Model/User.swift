@@ -56,4 +56,93 @@ class User{
         self.contacts = []
         
     }
+    init(_ dict:[String:Any]) {
+        self.objectID = dict[KOBJECTID] as! String
+        self.pushID = dict[KPUSHID] as? String
+        //date >> if the date which coming from database not in formal format replace it by current date else used date
+        if let created = dict[KCREATEAT] {
+            if (created as! String).count != 14 {
+                createAt = Date()
+            }else{
+                createAt = dateFormatter().date(from: created  as! String)!
+            }
+        }else{
+            self.createAt = Date()
+        }
+     
+        //
+        if let updated = dict[KUPDATEAT] {
+            if (updated as! String).count != 14 {
+               updateAt = Date()
+            }else{
+                updateAt = dateFormatter().date(from: updated as! String)!
+            }
+        }else{
+            self.updateAt = Date()
+        }
+        //
+        if let email = dict[KEMAIL]{
+            self.email = email as! String
+        }else{
+            self.email = ""
+        }
+        if let fName = dict[KFIRSTNAME]{
+            self.firstName = fName as! String
+        }else{
+            self.firstName = ""
+        }
+        if let lName = dict[KLASTNAME]{
+            self.lastName = lName as! String
+        }else{
+            self.lastName = ""
+        }
+        self.fullName = firstName + "" + lastName
+        if let avat = dict[KAVATAR]{
+            self.avatar = avat as! String
+        }else{
+            //create image with
+            avatar = ""
+        }
+        if let online = dict[KISONLINE]{
+            self.isOnline = online as! Bool
+        }else{
+             self.isOnline = false
+        }
+        if let phone = dict[KPHONE]{
+            self.phoneNumber = phone as! String
+        }else{
+            phoneNumber = ""
+        }
+        if let countryCode = dict[KCOUNTRYCODE]{
+            self.countryCode = countryCode as! String
+        }else{
+            self.countryCode = ""
+        }
+        
+        if let contact = dict[KCONTACT] {
+            self.contacts = contact as! [String]
+        }else{
+            self.contacts = []
+        }
+        if let blockList = dict[KBLOCKEDUSERID]{
+            self.blockUsers = blockList as! [String]
+        }else{
+            self.blockUsers = []
+        }
+        if let loginMethod = dict[KLOGINMETHOD]{
+            self.loginMethod = loginMethod as! String
+        }else{
+            self.loginMethod = ""
+        }
+        if let city = dict[KCITY]{
+            self.city = city as! String
+        }else{
+            self.city = ""
+        }
+        if let country = dict[KCOUNTRY]{
+            self.country = country as! String
+        }else{
+            self.country = ""
+        }
+    }
 }
