@@ -182,6 +182,19 @@ class UserVC: UITableViewController {
     override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return index
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        var user:User
+        if searchController.isActive && searchController.searchBar.text != "" {
+            user = filterUsers[indexPath.row]
+        }else{
+            let sectionTitle = self.sectionTitleList[indexPath.section]
+            let users = self.allUserGropped[sectionTitle]
+            user = users![indexPath.row]
+        }
+        //create a new chat
+        startPrivateChat(user1: UserServices.currentUser()!, withUser: user)
+    }
 
 }
 //Search Extension

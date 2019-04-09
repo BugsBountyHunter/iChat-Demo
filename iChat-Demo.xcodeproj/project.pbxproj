@@ -26,6 +26,8 @@
 		D26A4F752246C33A0061F159 /* CallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A4F742246C33A0061F159 /* CallVC.swift */; };
 		D26A4F772246C53C0061F159 /* StoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26A4F762246C53C0061F159 /* StoryboardExtension.swift */; };
 		D28DC7B7224847C9007AE60B /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DC7B6224847C9007AE60B /* HelperFunctions.swift */; };
+		E22C201C2259585B00211059 /* RecentChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22C201B2259585B00211059 /* RecentChatCell.swift */; };
+		E2E7B10F2250F61300AED8DA /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E7B10E2250F61300AED8DA /* Recent.swift */; };
 		E2FAC339224FFAEC00BCFEDA /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FAC338224FFAEC00BCFEDA /* ProfileVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		D26A4F742246C33A0061F159 /* CallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallVC.swift; sourceTree = "<group>"; };
 		D26A4F762246C53C0061F159 /* StoryboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardExtension.swift; sourceTree = "<group>"; };
 		D28DC7B6224847C9007AE60B /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		E22C201B2259585B00211059 /* RecentChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentChatCell.swift; sourceTree = "<group>"; };
+		E2E7B10E2250F61300AED8DA /* Recent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
 		E2FAC338224FFAEC00BCFEDA /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +138,7 @@
 			children = (
 				D2545B322243D06A002E91FA /* Main.storyboard */,
 				D244F0F5224CF37E00EC1F4B /* ChatCell.swift */,
+				E22C201B2259585B00211059 /* RecentChatCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			children = (
 				D2545B4B22457143002E91FA /* Constants.swift */,
 				D28DC7B6224847C9007AE60B /* HelperFunctions.swift */,
+				E2E7B10E2250F61300AED8DA /* Recent.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -349,6 +355,8 @@
 				D2545B2F2243D069002E91FA /* AppDelegate.swift in Sources */,
 				D28DC7B7224847C9007AE60B /* HelperFunctions.swift in Sources */,
 				D2545B4C22457143002E91FA /* Constants.swift in Sources */,
+				E22C201C2259585B00211059 /* RecentChatCell.swift in Sources */,
+				E2E7B10F2250F61300AED8DA /* Recent.swift in Sources */,
 				D244F0F8224D076200EC1F4B /* UserVC.swift in Sources */,
 				D26A4F69224652FC0061F159 /* RegisterVC.swift in Sources */,
 				D26A4F71224670CA0061F159 /* User.swift in Sources */,

@@ -27,7 +27,41 @@ func dataImage(fromString imgString:String,withBlock:imageDataCallback){
     withBlock(dataImage as Data?)
     
 }
-
+//create dictinary from calls and chats
+func createDictionary(fromSnapshot snapshot:[DocumentSnapshot])->[NSDictionary]{
+    var allMessage:[NSDictionary] = []
+    for snap in snapshot {
+        allMessage.append(snap.data()! as NSDictionary)
+    }
+    return allMessage
+}
+func timeElapsed(date:Date)->String {
+    let sec = date.timeIntervalSince(date)
+    var elapsed:String?
+    if sec < 60 {
+        elapsed = "Just now"
+    }else if sec < 60*60 { // from minutes
+        let minutes = Int(sec/60)
+        var minTxt = "min"
+        if minutes > 1 {
+            minTxt = "mins"
+        }
+        
+         elapsed = "\(minutes) \(minTxt)"
+    }else if sec < 24 * 60 * 60 {
+        let hours = Int(sec/(60*60))
+        var hourTxt = "hour"
+        if hours > 1 {
+            hourTxt = "hours"
+        }
+         elapsed = "\(hours) \(hourTxt)"
+    }else{
+        let currentDateFormatter = dateFormatter()
+        currentDateFormatter.dateFormat = "dd/MM/YYYY"
+        elapsed = "\(currentDateFormatter.string(from: date))"
+    }
+    return elapsed!
+}
 //create image from firstname and last name
 func createImageFromInitials(_ firstName:String?,lastName:String?,completion:@escaping imageCallback){
     //New image Properties

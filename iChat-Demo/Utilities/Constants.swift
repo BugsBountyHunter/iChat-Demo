@@ -17,6 +17,7 @@ typealias imageDataCallback = (_ image:Data?)->Void
 //MARK:- CELL IDENTIFIRE
 let SETTINGS_CELL = "settingsCell"
 let CHAT_CELL = "chatCell"
+let RECENT_CHAT_CELL = "recentChatCell"
 //MARK:- ViewController ID
 let MAIN_CHAT_VC_TAB = "mainChatVC"
 let REGISTER_VC = "registerVC"
@@ -49,3 +50,34 @@ public let KBLOCKEDUSERID = "blockedUserID"
 //MARK:- contacts
 public let KCONTACT = "contact"
 public let KCONTACTID = "contactID"
+
+//MARK:- Recent
+public let KCHATROOMID = "chatRoomID"
+public let KDATE = "date"
+public let KTYPE = "type"
+public let KPRIVATE = "private"
+public let KGROUP = "group"
+public let KGROUPID = "groupID"
+public let KUSERID = "userID"
+public let KRECENTID = "recentID"
+
+public let KMEMBERS = "members"
+public let KMESSAGE = "message"
+public let KMEMBERSTOPUSH = "memberToPush"
+public let KDISCRIPTION = "discription"
+public let KLASTMESSAGE = "lastMessage"
+public let KCOUNTER = "counter"
+public let KWITHUSERUSERNAME = "withUserUserName"
+public let KWITHUSERUSERID = "withUserUserID"
+public let KOWNERID = "owonerID"
+public let KSTATUS = "status"
+public let KMESSAGEID = "messageID"
+public let KNAME = "name"
+public let KSENDERID = "senderID"
+public let KSENDERNAME = "senderName"
+public let KTHUMBNAIL = "thumbail"
+public let KISdELETED = "isDeleted"
+
+
+//MARK:- Cell
+public let KWITHUSERFULLNAME = "withUserFullName"
